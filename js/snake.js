@@ -30,7 +30,7 @@ window.Snake = class {
 
     setDirection(newDx, newDy) {
         // 180度ターンを防ぐ（真後ろには進めない）
-        if (newDx !== -this.dx && newDy !== -this.dy) {
+        if (newDx !== -this.dx || newDy !== -this.dy) {
             this.nextDx = newDx;
             this.nextDy = newDy;
         }

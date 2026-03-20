@@ -11,14 +11,14 @@ window.addEventListener('load', () => {
     const scoreElement = document.getElementById('score');
     
     // オブジェクトのインスタンス化
-    const game = new window.Game(canvas, scoreElement, window.SnakeGameConfig);
+    window.game = new window.Game(canvas, scoreElement, window.SnakeGameConfig);
     
     // 入力イベントのリスニング
     document.addEventListener('keydown', (e) => {
-        game.handleInput(e.key);
+        window.game.handleInput(e.key);
     });
 
     // ゲーム開始
-    game.loop();
+    window.game.loop();
     console.log("Game started successfully.");
 });

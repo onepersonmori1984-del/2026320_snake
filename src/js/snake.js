@@ -1,5 +1,5 @@
 // Snake クラス
-window.Snake = class {
+export class Snake {
     constructor(config) {
         this.config = config;
         this.reset();

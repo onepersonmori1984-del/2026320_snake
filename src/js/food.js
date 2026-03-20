@@ -1,5 +1,5 @@
 // Food クラス
-window.Food = class {
+export class Food {
     constructor(config) {
         this.config = config;
         this.randomize();

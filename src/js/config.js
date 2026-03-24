@@ -1,4 +1,5 @@
 export const SnakeGameConfig = {
+    // 大きさのレバレッジ。　倍率拡大
     GRID_SIZE: 20,
     TILE_COUNT: 20,
     INITIAL_SNAKE: [

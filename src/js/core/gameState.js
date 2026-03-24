@@ -1,3 +1,6 @@
+// ゲームの状態を管理する。
+// 流れからみるとわかるね。　カウントダウンからスタートする。　ゲームオーバーのメソッドもある。
+
 export const GAME_STATE = {
     COUNTDOWN: 'COUNTDOWN',
     PLAYING: 'PLAYING',

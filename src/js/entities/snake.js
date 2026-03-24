@@ -7,32 +7,33 @@ export class Snake {
 
     reset() {
         // Deep copy of initial position
-        this.segments = JSON.parse(JSON.stringify(this.config.INITIAL_SNAKE));
-        this.dx = 1;
-        this.dy = 0;
-        this.nextDx = 1;
-        this.nextDy = 0;
+        this.segments = JSON.parse(JSON.stringify(this.config.INITIAL_SNAKE)); // configから初期位置を取得：蛇のスタート位置
+        this.dx = 1;                                                         // x方向の移動量
+        this.dy = 0;                                                         // y方向の移動量
+        this.nextDx = 1;                                                     // 初期の次のx方向の移動量
+        this.nextDy = 0;                                                     // 初期の次のy方向の移動量
+        // 初期位置から最初に進む方向は決まっている。右。
     }
 
     update() {
-        this.dx = this.nextDx;
-        this.dy = this.nextDy;
+        this.dx = this.nextDx;                                   //更新されたら,次の移動量が現在の位置になる
+        this.dy = this.nextDy;                                   //更新されたら,次の移動量が現在の位置になる
+
         const head = {
-            x: this.segments[0].x + this.dx,
-            y: this.segments[0].y + this.dy
+            x: this.segments[0].x + this.dx,                      //頭の次の位置を計算
+            y: this.segments[0].y + this.dy                      //頭の次の位置を計算
         };
-        this.segments.unshift(head);
+        this.segments.unshift(head);                               //頭をリストの先頭に追加
     }
 
     popTail() {
         return this.segments.pop();
     }
 
-    setDirection(newDx, newDy) {
-        // 180度ターンを防ぐ（真後ろには進めない）
-        if (newDx !== -this.dx || newDy !== -this.dy) {
-            this.nextDx = newDx;
-            this.nextDy = newDy;
+    setDirection(newDx, newDy) {                                 //蛇の次に進む方向を設定する。
+        if (newDx !== -this.dx || newDy !== -this.dy) {         // 180度ターンを防ぐ（真後ろには進めない）
+            this.nextDx = newDx;                                 //新しい方向を設定
+            this.nextDy = newDy;                                 //新しい方向を設定
         }
     }
 

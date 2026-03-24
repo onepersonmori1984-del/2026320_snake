@@ -1,0 +1,41 @@
+<!-- ブラウザWebアプリなのでまず最初に読み込まれる -->
+<!DOCTYPE html> <!-- HTML5文書であることを宣言 -->
+<html lang="ja"> <!-- HTML文書の開始タグ（日本語で表示） -->
+
+<head> <!-- 設定・メタ情報を書く場所（画面には表示されない） -->
+
+    <meta charset="UTF-8">                                  <!-- 文字コード（日本語対応） -->
+    <meta name="viewport" content="width=device-width,
+     initial-scale=1.0">                                    <!-- スマホ・レスポンシブ対応 -->
+    <title>Gemini Snake Game - OO Stable Version</title>    <!-- ブラウザタブのタイトル -->
+    <link rel="stylesheet" href="css/style.css">            <!-- CSS（見た目の設定） -->
+</head>
+
+<body>
+    <div class="info">                                      <!-- スコア・タイトル表示エリア -->
+        <h1>Gemini Snake</h1>
+        <div id="score">Score: 0</div>                     <!-- JSから更新されるスコア表示　リアクティブではなく直接書き換わる -->
+    </div>
+
+    <!-- ゲーム描画領域（超重要）JavaScriptがここにゲームを描画する -->
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+    <!-- 操作説明 -->
+    <div class="controls">
+        操作: 矢印キー または WASD<br>
+        リスタート: スペースキー (ゲームオーバー時)
+    </div>
+
+    <!-- 
+      JavaScriptファイルの読み込み ⚠ 順番が超重要（依存関係あり）
+      ・config：設定
+      ・snake / food：部品
+      ・game：司令塔
+      ・main：起動処理
+    -->
+
+    <script type="module" src="js/main.js"></script> <!-- 起動スイッチ（エントリーポイント） -->
+
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "gemini-snake-game",
+  "version": "1.0.0",
+  "description": "Snake Game with Playwright tests",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "start": "npx http-server ."
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                                  /* 最新のJavaScript機能をサポート */
+    "module": "CommonJS",                                /* Node.jsとブラウザ両方で扱いやすい形式 */
+    "lib": ["ES2020", "DOM"],                            /* DOM（ブラウザ用）と最新のJS機能を使えるようにする */
+    "allowJs": true,                                     /* JSファイルも読み込めるようにする（少しずつ移行するため） */
+    "checkJs": true,                                     /* JSファイルでもエラーをチェックしてくれる（超便利！） */
+    "strict": true,                                      /* 型チェックを厳格にする（パワーアップの肝） */
+    "noImplicitAny": false,                              /* 最初は型を「不明(any)」としても怒られないようにする（移行しやすくするため） */
+    "esModuleInterop": true,                             /* モジュールのインポートを楽にする */
+    "skipLibCheck": true,                                /* ライブラリ自体のチェックはスキップして高速化 */
+    "forceConsistentCasingInFileNames": true             /* ファイル名の大文字小文字を厳しくチェック */
+  },
+  "include": ["src/**/*", "api/**/*"],                   /* 対象となるフォルダ */
+  "exclude": ["node_modules"]                            /* 除外するフォルダ */
+}

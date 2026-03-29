@@ -8,7 +8,8 @@ export default async function handler(req, res) {
   try {
     await client.connect();
 
-    const result = await client.query('SELECT * FROM scores');
+    // ID=1のハイスコアのみ取得する
+    const result = await client.query('SELECT * FROM scores WHERE id = 1');
 
     await client.end();
 
